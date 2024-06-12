@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using System.Globalization;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -9,9 +11,18 @@
 
         splitParagraph = paragraph.Split();
 
+        int i = 0;
+        string test = "ball";
+
+        // Comptage avec valeurs fixes pour test
         foreach(string word in splitParagraph)
         {
-            Console.WriteLine(word.Trim(charsToTrim));
+            if(String.Equals(test, word.Trim(charsToTrim), StringComparison.OrdinalIgnoreCase))
+            {
+                i++;
+            }
         }
+
+        Console.WriteLine(i);
     }
 }
